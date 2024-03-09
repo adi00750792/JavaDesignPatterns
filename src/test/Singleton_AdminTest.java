@@ -1,3 +1,6 @@
+package test;
+
+import main.Singleton_Admin;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +16,7 @@ class Singleton_AdminTest {
         singletonAdminUnderTest = null;
     }
 
+    // Test to check if both the instances are same or not
     @Test
     public void testSingletonInstance(){
         Singleton_Admin instance1 = Singleton_Admin.getInstance();
@@ -20,6 +24,7 @@ class Singleton_AdminTest {
         assertSame(instance1,instance2);
     }
 
+    // This test is written to check if threads are in sync or not i.e the Singleton instances should be in sync
     @Test
     public void testThreadSafety() {
         // Create multiple threads and ensure they all get the same instance
